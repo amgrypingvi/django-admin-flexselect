@@ -98,18 +98,6 @@
     }, 1);
   };
 
-  /**
-   * Overrides the original dismissAddAnotherPopup and triggers a change event on
-   * the field after the popup has been added.
-   */
-  var _dismissAddAnotherPopup = dismissAddAnotherPopup;
-
-  dismissAddAnotherPopup = function(win, newId, newRepr) {
-    _dismissAddAnotherPopup(win, newId, newRepr);
-    $('#' + windowname_to_id(win.name)).trigger('change');
-  };
-  dismissAddAnotherPopup.original = _dismissAddAnotherPopup;
-
   // On Document.ready().
   $(function() {
     flexselect.bindEvents();
